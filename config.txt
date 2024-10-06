@@ -1,0 +1,14 @@
+Prefix pipelines/DRIMSeq/
+Plugin DMDSPlot inputfile parameters/parameters.dmdsplot.txt outputfile DMDSplot.pdf
+Plugin ExpressionFilter inputfile parameters/parameters.expressionfilter.txt outputfile filtered.rds
+Plugin DirichletMultinomial inputfile filtered.rds outputfile fitted
+Plugin GroupKD inputfile fitted.rds outputfile groupKD.rds
+Plugin PValuePlot inputfile groupKD.rds outputfile pvalue.pdf
+Plugin ProportionPlot inputfile groupKD.rds outputfile proportion.pdf
+Plugin LinePlot inputfile groupKD.rds outputfile lineplot.pdf
+Plugin RibbonPlot inputfile groupKD.rds outputfile ribbonplot.pdf
+Plugin Geuvadis inputfile none outputfile geuvadis
+Plugin SQTL inputfile geuvadis outputfile SQTL.rds
+Plugin FeaturePlot inputfile SQTL.rds outputfile featureplot.pdf
+Plugin SNPPlot inputfile SQTL.rds outputfile SNPplot.pdf
+Plugin BlockPlot inputfile SQTL.rds outputfile blockplot.pdf
